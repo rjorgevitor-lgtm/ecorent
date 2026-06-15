@@ -1,0 +1,17 @@
+## Pages
+- [Ajuda e Suporte - EcoRent](/helpsupport): Encontre respostas para suas dúvidas ou entre em contato com a equipe de suporte da EcoRent.
+- [anúncio - EcoRent`}](/listingform): No description available
+- [Cadastrar - EcoRent](/signup): Crie sua conta EcoRent e comece a alugar e compartilhar itens de forma sustentável.
+- [Dashboard - EcoRent](/userdashboard): Gerencie seus anúncios e acompanhe suas atividades no EcoRent.
+- [EcoRent - O futuro é compartilhar](/home): Plataforma sustentável de aluguel peer-to-peer em Curitiba. Economize dinheiro, reduza desperdício e ajude o planeta alugando itens da sua comunidade.
+- [Entrar - EcoRent](/login): Faça login na sua conta EcoRent para alugar e compartilhar itens de forma sustentável.
+- [Explorar itens - EcoRent](/browse): No description available
+- [Mensagens - EcoRent](/chat): No description available
+- [Métodos de Pagamento - EcoRent](/paymentmethods): No description available
+- [Meu perfil - EcoRent](/userprofile): Gerencie suas informações de perfil no EcoRent em Curitiba.
+- [Meu Perfil - EcoRent](/profile): No description available
+- [Meus Aluguéis - EcoRent](/myrentals): No description available
+- [Meus anúncios - EcoRent](/mylistings): Gerencie todos os seus anúncios de itens para aluguel.
+- [Meus Favoritos - EcoRent](/favorites): No description available
+- [Política de Privacidade - EcoRent](/privacypolicy): Política de Privacidade da plataforma EcoRent. Saiba como coletamos, usamos e protegemos seus dados.
+- [Termos de Serviço - EcoRent](/termsofservice): Termos de Serviço da plataforma EcoRent. Leia atentamente as regras e condições de uso.
