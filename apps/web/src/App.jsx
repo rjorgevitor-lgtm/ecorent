@@ -1,9 +1,12 @@
 import React from 'react';
-import { Route, Routes, HashRouter as Router } from 'react-router-dom';
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+
 import { Toaster } from '@/components/ui/sonner';
 import ScrollToTop from './components/ScrollToTop.jsx';
+
 import { AuthProvider } from './contexts/AuthContext.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
+
 import HomePage from './pages/HomePage.jsx';
 import BrowsePage from './pages/BrowsePage.jsx';
 import ItemDetailPage from './pages/ItemDetailPage.jsx';
@@ -26,6 +29,7 @@ function App() {
     <Router>
       <AuthProvider>
         <ScrollToTop />
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/browse" element={<BrowsePage />} />
@@ -35,88 +39,108 @@ function App() {
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsOfServicePage />} />
           <Route path="/help" element={<HelpSupportPage />} />
-          <Route 
-            path="/dashboard" 
+
+          <Route
+            path="/dashboard"
             element={
               <ProtectedRoute>
                 <UserDashboardPage />
               </ProtectedRoute>
-            } 
+            }
           />
-          <Route 
-            path="/my-listings" 
+
+          <Route
+            path="/my-listings"
             element={
               <ProtectedRoute>
                 <MyListingsPage />
               </ProtectedRoute>
-            } 
+            }
           />
-          <Route 
-            path="/my-rentals" 
+
+          <Route
+            path="/my-rentals"
             element={
               <ProtectedRoute>
                 <MyRentalsPage />
               </ProtectedRoute>
-            } 
+            }
           />
-          <Route 
-            path="/create-listing" 
+
+          <Route
+            path="/create-listing"
             element={
               <ProtectedRoute>
                 <ListingFormPage />
               </ProtectedRoute>
-            } 
+            }
           />
-          <Route 
-            path="/edit-listing/:id" 
+
+          <Route
+            path="/edit-listing/:id"
             element={
               <ProtectedRoute>
                 <ListingFormPage />
               </ProtectedRoute>
-            } 
+            }
           />
-          <Route 
-            path="/profile" 
+
+          <Route
+            path="/profile"
             element={
               <ProtectedRoute>
                 <ProfilePage />
               </ProtectedRoute>
-            } 
+            }
           />
-          <Route 
-            path="/payment-methods" 
+
+          <Route
+            path="/payment-methods"
             element={
               <ProtectedRoute>
                 <PaymentMethodsPage />
               </ProtectedRoute>
-            } 
+            }
           />
-          <Route 
-            path="/favorites" 
+
+          <Route
+            path="/favorites"
             element={
               <ProtectedRoute>
                 <FavoritesPage />
               </ProtectedRoute>
-            } 
+            }
           />
-          <Route 
-            path="/chat" 
+
+          <Route
+            path="/chat"
             element={
               <ProtectedRoute>
                 <ChatPage />
               </ProtectedRoute>
-            } 
+            }
           />
-          <Route path="*" element={
-            <div className="min-h-[100dvh] flex items-center justify-center bg-background">
-              <div className="text-center">
-                <h1 className="text-6xl font-bold text-primary mb-4 font-serif">404</h1>
-                <p className="text-xl text-muted-foreground mb-6">Página não encontrada</p>
-                <a href="/" className="text-primary font-medium hover:underline">Voltar para o início</a>
+
+          <Route
+            path="*"
+            element={
+              <div className="min-h-[100dvh] flex items-center justify-center bg-background">
+                <div className="text-center">
+                  <h1 className="text-6xl font-bold text-primary mb-4 font-serif">
+                    404
+                  </h1>
+                  <p className="text-xl text-muted-foreground mb-6">
+                    Página não encontrada
+                  </p>
+                  <a href="/" className="text-primary font-medium hover:underline">
+                    Voltar para o início
+                  </a>
+                </div>
               </div>
-            </div>
-          } />
+            }
+          />
         </Routes>
+
         <Toaster />
       </AuthProvider>
     </Router>
