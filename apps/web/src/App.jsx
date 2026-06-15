@@ -1,7 +1,11 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 export default function App() {
   return (
-    <div>
-      <h1>APP BASE</h1>
-    </div>
+    <BrowserRouter basename="/ecorent">
+      <Routes>
+        <Route path="/" element={<h1>HOME</h1>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
