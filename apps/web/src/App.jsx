@@ -1,3 +1,7 @@
 export default function App() {
-  return <h1>FUNCIONANDO</h1>;
+  return (
+    <div>
+      <h1>APP BASE</h1>
+    </div>
+  );
 }
