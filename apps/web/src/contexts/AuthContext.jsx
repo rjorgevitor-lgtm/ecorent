@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import pb from '@/lib/pocketbaseClient';
 
 const AuthContext = createContext(null);
@@ -7,7 +6,6 @@ const AuthContext = createContext(null);
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [initialLoading, setInitialLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (pb.authStore.isValid && pb.authStore.model) {
@@ -18,8 +16,12 @@ export function AuthProvider({ children }) {
 
   const login = async (email, password) => {
     try {
-      const authData = await pb.collection('users').authWithPassword(email, password, { $autoCancel: false });
+      const authData = await pb
+        .collection('users')
+        .authWithPassword(email, password, { $autoCancel: false });
+
       setCurrentUser(authData.record);
+
       return { success: true, user: authData.record };
     } catch (error) {
       return { success: false, error: error.message };
@@ -35,12 +37,17 @@ export function AuthProvider({ children }) {
         name,
         phone: phone || ''
       };
-      
-      const record = await pb.collection('users').create(data, { $autoCancel: false });
-      
-      const authData = await pb.collection('users').authWithPassword(email, password, { $autoCancel: false });
+
+      const record = await pb
+        .collection('users')
+        .create(data, { $autoCancel: false });
+
+      const authData = await pb
+        .collection('users')
+        .authWithPassword(email, password, { $autoCancel: false });
+
       setCurrentUser(authData.record);
-      
+
       return { success: true, user: authData.record };
     } catch (error) {
       return { success: false, error: error.message };
@@ -50,10 +57,10 @@ export function AuthProvider({ children }) {
   const logout = () => {
     pb.authStore.clear();
     setCurrentUser(null);
-    navigate('/');
+    window.location.href = "/";
   };
 
-  const isAuthenticated = pb.authStore.isValid && currentUser !== null;
+  const isAuthenticated = pb.authStore.isValid;
 
   const value = {
     currentUser,
@@ -64,7 +71,11 @@ export function AuthProvider({ children }) {
     initialLoading
   };
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 export function useAuth() {
